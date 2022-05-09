@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Course Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Course Info</div>
+
+   <table cellspacing="0">
+      <tr>
+         <th>Link</th>
+         <th>Description</th>
+         <th>Learning</th>
+         <th>Features</th>
+         <th>Curriculum</th>
+      </tr>
+         {% for results in results %}
+      <tr>
+          <td>{{results['link']}}</td>
+         <td>{{results['description']}}</td>
+         <td>{{results['learning']}}</td>
+         <td>{{results['features']}}</td>
+         <td>{{results['curriculum']}} </td>
+       {% endfor %}
+   </table>
+</div>
+
+
+
+</body>
+
+</html>
